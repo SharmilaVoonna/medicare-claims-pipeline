@@ -28,6 +28,13 @@ CMS zip files ─► data/landing ─► ingest.py ─► data/raw (CSV)
 Orchestration: Airflow DAG (branch: new files → ingest, else reprocess raw)
 CI: GitHub Actions runs the pipeline on sample data + pytest on every push
 ```
+## Dashboard
+![Dashboard overview](docs/Dashboard_1.png)
+![Dashboard charts](docs/Dashboard_2.png)
+
+## Data quality results
+![Quality checks](docs/Quality_check.png)
+![Quality checks and pytest](docs/quality_chk_pytest.png)
 
 ## Project structure
 
