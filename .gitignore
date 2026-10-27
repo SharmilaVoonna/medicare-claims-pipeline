@@ -1,0 +1,10 @@
+# data and generated files - never commit these
+data/
+warehouse/
+airflow_home/
+.venv/
+__pycache__/
+*.pyc
+spark-warehouse/
+metastore_db/
+derby.log

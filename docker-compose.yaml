@@ -1,0 +1,19 @@
+# Runs Airflow on your laptop in a single container ("standalone" mode).
+# Start:  docker compose up --build
+# UI:     http://localhost:8080   (user: admin, password is printed in the logs
+#                                  and saved to airflow_home/standalone_admin_password.txt)
+services:
+  airflow:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    command: standalone
+    ports:
+      - "8080:8080"
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__CORE__DAGS_FOLDER: /opt/project/dags
+      PROJECT_ROOT: /opt/project
+    volumes:
+      - .:/opt/project
+      - ./airflow_home:/opt/airflow

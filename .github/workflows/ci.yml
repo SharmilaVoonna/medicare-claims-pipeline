@@ -1,0 +1,37 @@
+name: pipeline-ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create sample data
+        run: python tools/make_sample_data.py
+
+      - name: Run pipeline
+        working-directory: scripts
+        run: |
+          python ingest.py
+          python transform.py
+          python load_warehouse.py
+          python quality_checks.py
+
+      - name: Run tests
+        run: pytest -v

@@ -1,0 +1,12 @@
+cd /mnt/c/Users/voonn/Desktop/Sharmila/Sample_claim_proj/claims-pipeline
+source .venv/bin/activate
+
+
+or
+
+Optional shortcut, so you only type one word: run this once:
+
+echo "alias claims='cd ~/claims-pipeline && source .venv/bin/activate'" >> ~/.bashrc
+source ~/.bashrc
+
+After that, whenever you open Ubuntu, just type claims and press Enter.
