@@ -34,6 +34,10 @@ CHECKS = [
      "SELECT count(*) FROM fact_claims WHERE provider_sk IS NULL"),
     ("negative_paid_amount", "WARNING",
      "SELECT count(*) FROM fact_claims WHERE paid_amount < 0"),
+    ("claims_after_member_death", "WARNING",
+     "SELECT count(*) FROM fact_claims f JOIN dim_member m USING (member_sk) "
+     "JOIN dim_date d ON d.date_key = f.from_date_key "
+     "WHERE m.death_date IS NOT NULL AND d.full_date > m.death_date"),
 ]
 
 
