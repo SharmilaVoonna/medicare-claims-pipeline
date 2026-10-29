@@ -1,4 +1,4 @@
-# Medicare Claims Data Pipeline
+# Medicare Claims Data Pipeline (Batch ETL)
 
 An end-to-end batch data engineering project built on synthetic Medicare claims
 (CMS DE-SynPUF). It ingests raw claim files, cleanses them with PySpark, models
