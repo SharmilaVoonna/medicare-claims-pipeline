@@ -6,7 +6,7 @@ them into a star schema with SCD Type 2 in DuckDB, validates them with automated
 data quality checks, orchestrates everything in Apache Airflow, and serves a
 Streamlit dashboard. CI runs the whole pipeline on every push.
 
-**Cost: $0.** No cloud account needed.
+**Cost: $0.** Free for personal learning.
 
 ## Architecture
 
