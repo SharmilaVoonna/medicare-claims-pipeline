@@ -7,6 +7,7 @@ data quality checks, orchestrates everything in Apache Airflow, and serves a
 Streamlit dashboard. CI runs the whole pipeline on every push.
 
 **Cost: $0.** Everything runs locally with free tools.
+**Cost: $0.** Free for personal learning.
 
 ## Architecture
 
